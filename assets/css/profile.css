@@ -235,9 +235,9 @@ td, th {
 
 .icon-logoUpdate:before {
     content: '';
-    background-image: url('https://login.ecount.com/static/contents/images/login/logo.png?2020090801');
-    width: 400px;
-    height: 50px;
+    background-image: url('https://www.ecount.com/kr/common/images/common/icon-common-new.png?ver=2021050401');
+    width: 199px;
+    height: 42px;
     display: inline-block;
     background-repeat: no-repeat;
 }
