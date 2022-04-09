@@ -34,6 +34,14 @@
     padding: 30px;
     overflow: hidden;
     color: #C71585;
+
+}
+@media (min-width: 250px) {
+    #music .music-player {
+        width: 250px;
+        float: left;
+        height: auto;
+    }
 }
 
 #music .music-name,
@@ -44,10 +52,10 @@
 }
 
 #music .music-name{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 10px;
+   
 }
 
 #music .artist-name{
@@ -58,7 +66,7 @@
     position: relative;
     display: block;
     margin: 40px auto;
-    width: 180px;
+    width: 140px;
     height: 150px;
     border-radius: 50%;
     background-image: url('images/1.png');
@@ -77,7 +85,8 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #5f7a61;
+    background: #DB7093;
+    
 }
 
 #music .song-slider{
@@ -129,6 +138,7 @@
     background: #C71585;
     cursor: pointer;
     border: none;
+    
 }
 
 #music .play-btn span{
@@ -179,8 +189,8 @@
 }
 
 #music .btn{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: #C71585;
     border-radius: 50%;
     display: flex;

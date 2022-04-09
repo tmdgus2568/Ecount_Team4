@@ -1,20 +1,20 @@
 let songs = [
     {
-        name: 'song 1',
+        name: '하울의 움직이는 성 OST',
         path: 'static/musics/1.mp3',
-        artist:'artist 1',
-        cover:'static/images/1.png'
+        artist:'히사이시 조',
+        cover:'https://image.yes24.com/goods/91900096/XL'
     },
     {
-        name: 'song 2',
+        name: '바다가 보이는 마을',
         path: 'static/musics/2.mp3',
-        artist:'artist 2',
-        cover:'static/images/2.png'
+        artist:'히사이시 조',
+        cover:'https://i.ytimg.com/vi/UtHQMqky7vM/maxresdefault.jpg'
     },
     {
-        name: 'song 3',
+        name: '미녀와 야수 OST',
         path: 'static/musics/3.mp3',
-        artist:'artist 3',
-        cover:'static/images/3.png'
+        artist:'앨런 멩컨',
+        cover:'https://newsimg.sedaily.com/2017/03/10/1ODBF64B8K_1.jpg'
     }
 ]
