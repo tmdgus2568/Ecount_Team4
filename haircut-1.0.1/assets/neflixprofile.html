@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="ko" data-trigger="true" class="js-focus-visible" data-js-focus-visible>
+<head>
+    <meta charset="utf-8" />
+    <title>4조 프로필</title>
+    <link rel="stylesheet" type="text/css" href="css/profile.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(document).on('click', '.profile', function (e) {
+                let profile = $(this).find('div > a');
+                let info;
+                if (profile.attr('tabindex') == '0') {
+                    info = {
+                        'main_d': `<h1 class="display-2 text-white text-uppercase mb-4 animated slideInDown">Ecount 4조 <br>김민성 개인 페이지<br></h1>
+                                    <br />
+                                    <br />
+
+                                    <h4 class="text-white text-uppercase mb-4 animated slideInDown">
+                                        <a class="social-icon" href="https://github.com/minzzy524" target="_blank"><i class="fab fa-github"></i></a>&nbsp;&nbsp;&nbsp;GITHUB
+                                    </h4>
+                                    <h4 class="text-white text-uppercase mb-4 animated slideInDown">
+                                        <a class="social-icon" href="mailto:minzzy524@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>&nbsp;&nbsp;&nbsp;E-MAIL
+                                        <h4 class="text-white text-uppercase mb-4 animated slideInDown">
+                                            <a class="social-icon" href="https://minzzywebpractice.netlify.app" target="_blank"><i class="fa fa-file-code"></i></a>&nbsp;&nbsp;&nbsp;PRACTICED SITE
+                                        </h4>
+                                    </h4>`,
+                        'about_me': `<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="d-flex flex-column">
+                                    <img class="img-fluid w-75 align-self-end" src="img/about2.jpg" alt="">
+                                        <div class="w-50 bg-secondary p-5" style="margin-top: -25%;">
+                                            <h1 class="text-uppercase text-primary mb-3">경영학</h1>
+                                            <h2 class="text-uppercase mb-0">컴퓨터공학</h2>
+                                        </div>
+                            </div>
+                                </div>
+                                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                    <p class="d-inline-block bg-secondary text-primary py-1 px-4">About</p>
+                                    <h1 class="text-uppercase mb-4">경영학 베이스의 배경지식을 통해 ERP SYSTEM에 대한 높은 이해</h1>
+                                    <p>
+                                        경영학과 컴퓨터 공학을 함께 전공하였기에,
+                                        <br>개발에 대한 지식 뿐만 아니라 ERP의 기능들에 대해서도
+                                            <br />깊이 있는 배경지식을 가지고 있습니다.
+                            </p>
+                                        <p class="mb-4">&nbsp;&nbsp;&nbsp;</p>
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <h3 class="text-uppercase mb-3">세무사 시험 준비 경험</h3>
+                                                <p class="mb-0">개발자들에게 흔치 않은 분야인 <br>회계와 세법, 원가관리와 재무관리 등을 <br>세무사를 준비하는 동안 공부 했습니다. </p>
+                                </div>
+                                                    <div class="col-md-6">
+                                                        <h3 class="text-uppercase mb-3">&nbsp;&nbsp;&nbsp;</h3>
+                                                        <p class="mb-0">이러한 도메인 지식을 바탕으로 <br>경영인의 시각에게 문제를 바라보고, <br>해결할 수 있는 개발자가 되고자 합니다.</p>
+                                </div>
+                            </div>
+                                                    </div>`,
+                        'container_1':`<div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block bg-secondary text-primary py-1 px-4">studied</p>
+                <h1 class="text-uppercase">Programming Languages & Tools</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <li class="list-inline-item"><i class="fab fa-html5 fa-3x"></i></li>
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">HTML</h3>
+                            <p>HTML Forms<br>HTML Video<br>HTML Audio</p>
+
+                            <span class="text-uppercase text-primary">간단한 실습 예제</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <li class="list-inline-item"><i class="fab fa-css3-alt fa-3x"></i></li>
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">CSS</h3>
+                            <p>CSS Links<br>CSS Float<br>CSS Navigation bar</p>
+                            <span class="text-uppercase text-primary">스타벅스 클론 페이지</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <li class="list-inline-item"><i class="fab fa-js-square fa-3x"></i></li>
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">Javascript</h3>
+                            <p>JS Events<br>JS Array<br>JS JSON</p>
+                            <span class="text-uppercase text-primary">자기소개 페이지</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <li class="list-inline-item"><i class="fab fa-python fa-3x"></i></li>
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">Python</h3>
+                            <p>Prophet<br>LSTM<br>RNN</p>
+                            <span class="text-uppercase text-primary">코인 미래 가격 예측</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <li class="list-inline-item"><i class="fab fa-r-project fa-3x"></i></i></li>
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">R</h3>
+                            <p>Random Forest<br>K-Nearest Neighbor<br>Support Vector Machine</p>
+                            <span class="text-uppercase text-primary">대학원 입학 데이트를 통한 합격 예측</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <<li class="list-inline-item"><i class="fab fa-npm fa-3x"></i></li>
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">NPM</h3>
+                            <p>Node.js 16.14.2<br>Node.js 15.14.0<br><br></p>
+                            <span class="text-uppercase text-primary">nodejs 버전관리</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>`,
+                        'container_2':`<div class="container">
+            <div class="row g-0">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="bg-secondary h-100 d-flex flex-column justify-content-center p-5">
+                        <p class="d-inline-flex bg-dark text-primary py-1 px-4 me-auto">EXPERIENCE</p>
+                        <h1 class="text-uppercase mb-4">산학 연계 프로젝트</h1>
+                        <div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">팀 프로젝트로 ADUP이라는 기업체와 협업하여 <br>구글 Oauth 클라이언트 ID 발급을 통한 소셜 로그인과 <br>인증서버를 통한 회원정보 관리, 게시판 등의 <br>기능들을 구현하는 프로젝트를 진행 했었습니다.<br> 또한, Thymeleaf를 이용해 간단한 웹 페이지를 제작했습니다.<br />팀원들과 4개월의 기간동안 기업체의 피드백을 바탕으로 <br> 만든 모듈화 된 데이터 허브를 기업체에 전달하였습니다. </h6>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <img class="img-fluid h-100" src="img/adup.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>`,
+                        'container_3':`<div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block bg-secondary text-primary py-1 px-4">INTERESTS</p>
+                <h1 class="text-uppercase">Personal Site</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/youtube.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square" href="https://www.youtube.com/c/%EB%85%B8%EC%95%84%EB%9D%BC%EC%9D%B4%EB%94%A9" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h5 class="text-uppercase">LOAD BIKE YOUTUBE</h5>
+                            <span class="text-primary">여자친구와 운영하는 라이딩채널</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cafesounds.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square" href="https://whitenoisemarket.com/user/5477400453316608" target="_blank"><i class="fab fa-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h5 class="text-uppercase">WHITE NOISE MARKET</h5>
+                            <span class="text-primary">카페 백색소음 공유 페이지</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cafesounds2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square" href="https://www.instagram.com/koreancafesounds/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h5 class="text-uppercase">CAFE PHOTO INSTAGRAM</h5>
+                            <span class="text-primary">카페 사진 공유 인스타계정</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/society6.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square" href="https://society6.com/minzzy524"><i class="fab fa-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h5 class="text-uppercase">SOCIETY6 STORE</h5>
+                            <span class="text-primary">위탁 대리판매 사이트</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`,
+                        'container_4':`        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <!-- YOUTUBE VIDEO -->
+                    <section class="youtube">
+                        <div class="youtube__area">
+                            <div id="player"></div>
+                        </div>
+                        <div class="youtube__cover"></div>
+                    </section>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="bg-secondary h-100 d-flex flex-column justify-content-center p-5">
+                        <p class="d-inline-flex bg-dark text-primary py-1 px-4 me-auto">My CAT</p>
+                        <h1 class="text-uppercase mb-4">우리집 고양이 보고 가세요!</h1>
+                        <div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">이름</h6>
+                                <span class="text-uppercase">지새벽</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">나이 및 성별</h6>
+                                <span class="text-uppercase">9개월 , 여아</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">품종</h6>
+                                <span class="text-uppercase">브리티시 숏헤어</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+                    }
+                }
+                else if (profile.attr('tabindex') == '1') {
+                    info = {
+                        'main_d': `<h1 class="display-2 text-white text-uppercase mb-4 animated slideInDown" id="main_d">Ecount 4조 <br>이우열 개인페이지<br></h1>
+                                    <br />
+                                    <br />
+                                    <h4 class="text-white text-uppercase mb-4 animated slideInDown">
+                                        <a class="social-icon" href="https://github.com/Neeexus" target="_blank"><i class="fab fa-github"></i></a>&nbsp;&nbsp;&nbsp;GITHUB
+                                    </h4>
+                                    <h4 class="text-white text-uppercase mb-4 animated slideInDown">
+                                        <a class="social-icon" href="mailto:dldndufzz@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>&nbsp;&nbsp;&nbsp;E-MAIL
+                                    </h4>`,
+
+                    }
+                }
+                else if (profile.attr('tabindex') == '2') {
+                }
+                else if (profile.attr('tabindex') == '3') {
+                }
+                localStorage.setItem("info", JSON.stringify(info));
+            });
+        });
+    </script>
+</head>
+<body class="vsc-initialized">
+    <div id="appMountPoint">
+        <div class="netflix-sans-font-loaded">
+            <div>
+                <div class="bd dark-background" lang="ko-KR" data-uia="container-adult">
+                    <div class="pinning-header on-profiles-gate">
+                        <div class="pinning-header-container" style="top: 0px; position: relative; background: transparent;">
+                            <div class="main-header on-profiles-gate menu-navigation" role="navigation">
+                                <a aria-label="이카운트" class="logo icon-logoUpdate active" href="neflixprofile.html">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profiles-gate-container">
+                        <div class="centered-div list-profiles-container">
+                            <div class="list-profiles">
+                                <h1 class="profile-gate-label">프로필을 선택해주세요.</h1>
+                                <ul class="choose-profile">
+                                    <li class="profile">
+                                        <div>
+                                            <a class="profile-link" tabindex="0" href="../index.html">
+                                                <!--href에 입력 및 프로필 이미지 지정하기-->
+                                                <div class="avatar-wrapper">
+                                                    <div class="profile-icon" style="background-image:url(https://occ-0-2218-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUsFEYwkuL8KsnuBL8bB9Km2dHjBvuUDxBuOfaqJWZf1pu0B60i-ymITtwMmxFSii54-wCIJDQQf_8lz_t2ySED_VoQd.png?r=a0c)"></div>
+                                                </div>
+                                                <span class="profile-name">김민성</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div>
+                                            <a class="profile-link" tabindex="1" href='../index.html'>
+                                                <!--href에 입력 및 프로필 이미지 지정하기-->
+                                                <div class="avatar-wrapper">
+                                                    <div class="profile-icon" style="background-image:url(https://occ-0-2218-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUsFEYwkuL8KsnuBL8bB9Km2dHjBvuUDxBuOfaqJWZf1pu0B60i-ymITtwMmxFSii54-wCIJDQQf_8lz_t2ySED_VoQd.png?r=a0c)"></div>
+                                                </div>
+                                                <span class="profile-name">이우열</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div>
+                                            <a class="profile-link" tabindex="2" href='../index.html' .html>
+                                                <!--href에 입력 및 프로필 이미지 지정하기-->
+                                                <div class="avatar-wrapper">
+                                                    <div class="profile-icon" style="background-image:url(https://occ-0-2218-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUsFEYwkuL8KsnuBL8bB9Km2dHjBvuUDxBuOfaqJWZf1pu0B60i-ymITtwMmxFSii54-wCIJDQQf_8lz_t2ySED_VoQd.png?r=a0c)"></div>
+                                                </div>
+                                                <span class="profile-name">이정우</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div>
+                                            <a class="profile-link" tabindex="3" href='../index.html'>
+                                                <!--href에 입력 및 프로필 이미지 지정하기-->
+                                                <div class="avatar-wrapper">
+                                                    <div class="profile-icon" style="background-image:url(https://occ-0-2218-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUsFEYwkuL8KsnuBL8bB9Km2dHjBvuUDxBuOfaqJWZf1pu0B60i-ymITtwMmxFSii54-wCIJDQQf_8lz_t2ySED_VoQd.png?r=a0c)"></div>
+                                                </div>
+                                                <span class="profile-name">홍승현</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
