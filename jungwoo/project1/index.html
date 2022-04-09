@@ -39,7 +39,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <script defer src="./js/youtube.js"></script>
-    <script src="js/musicScript.js"></script>
+   
 </head>
 
 <body>
@@ -129,23 +129,31 @@
     </div>
     <!-- Carousel End -->
 
-    <div id = "music-player">
-        <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-    <div class="player">
-        <canvas></canvas>
-        <div class="song">
-            <div class="artist">Kavinsky</div>
-            <div class="name">Odd Look ft. The Weeknd</div>
+    <div id = "music">
+        <audio src="" id="audio"></audio>
+
+        <div class="music-player">
+            <h1 class="music-name">song one</h1>
+            <p class="artist-name">artist</p>
+
+            <div class="disk"></div>
+
+            <div class="song-slider">
+                <input type="range" value="0" class="seek-bar">
+                <span class="current-time">00:00</span>
+                <span class="song-duration">00:00</span>
+            </div>
+
+            <div class="controls">
+                <button class="btn backward-btn"><img width="20px" src="https://cdn3.iconfinder.com/data/icons/multimedia-and-media-player-solid/48/Artboard_13-512.png" alt=""></button>
+                <button class="play-btn pause">
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn forward-btn"><img width="18px" src="https://pics.freeicons.io/uploads/icons/png/254296381606259998-512.png" alt=""></button>
+            </div> 
+
         </div>
-        <div class="playarea">
-            <div class="prevSong"></div>
-            <div class="play"></div>
-            <div class="pause"></div>
-            <div class="nextSong"></div>
-        </div>
-        <div class="soundControl"></div>
-        <div class="time">00:00</div>
-    </div>
     </div>
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -522,7 +530,9 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
+    <script src="js/data.js"></script>
+    <script src="js/musicScript.js"></script>
+    
    
 </body>
 
