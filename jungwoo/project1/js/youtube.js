@@ -1,26 +1,26 @@
-// Youtube IFrame API¸¦ ºñµ¿±â·Î ·ÎµåÇÕ´Ï´Ù.
+// Youtube IFrame APIï¿½ï¿½ ï¿½ñµ¿±ï¿½ï¿½ ï¿½Îµï¿½ï¿½Õ´Ï´ï¿½.
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// onYouTubePlayerAPIReady ÇÔ¼ö ÀÌ¸§Àº,
-// Youtube IFrame Player API¿¡¼­ »ç¿ëÇÏ´Â ÀÌ¸§ÀÌ±â ¶§¹®¿¡,
-// ´Ù¸£°Ô ÁöÁ¤ÇÏ¸é µ¿ÀÛÇÏÁö ¾Ê½À´Ï´Ù!
-// ±×¸®°í ÇÔ¼ö´Â Àü¿ª(Global) µî·ÏÇØ¾ß ÇÕ´Ï´Ù!
+// onYouTubePlayerAPIReady ï¿½Ô¼ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½,
+// Youtube IFrame Player APIï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ì¸ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+// ï¿½Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½!
+// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Global) ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Õ´Ï´ï¿½!
 function onYouTubePlayerAPIReady() {
     // <div id="player"></div>
     new YT.Player('player', {
-        videoId: 'PwdNTLll76M', // ÃÖÃÊ Àç»ýÇÒ À¯Æ©ºê ¿µ»ó ID
+        videoId: 'NkQHnHQNyjM', // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ID
         playerVars: {
-            autoplay: true, // ÀÚµ¿ Àç»ý À¯¹«
-            loop: true, // ¹Ýº¹ Àç»ý À¯¹«
-            playlist: 'PwdNTLll76M' // ¹Ýº¹ Àç»ýÇÒ À¯Æ©ºê ¿µ»ó ID ¸ñ·Ï
+            autoplay: true, // ï¿½Úµï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            loop: true, // ï¿½Ýºï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            playlist: 'NkQHnHQNyjM' // ï¿½Ýºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½
         },
         events: {
-            // ¿µ»óÀÌ ÁØºñµÇ¾úÀ» ¶§,
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½,
             onReady: function (event) {
-                event.target.mute() // À½¼Ò°Å!
+                event.target.mute() // ï¿½ï¿½ï¿½Ò°ï¿½!
             }
         }
     })
