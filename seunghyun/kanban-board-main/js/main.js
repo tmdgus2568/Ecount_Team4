@@ -44,89 +44,92 @@ const getList = ()=>{
 }
 getList();
 
-$('.kanban__add-item').on({
-    'click':function (){
+$(document).on({
+    'click':{
+        selector:'.kanban__add-item',
+        handler:function (){
+            let newItem = KanbanAPI.insertItem($(this).parent().attr('data-id') , "");
 
-        let newItem = KanbanAPI.insertItem($(this).parent().attr('data-id') , "");
-
-        makeItem($(this).parent().attr('data-id'), newItem.id, '');
-
-    }
-
-});
-$('.kanban__item-input').on({
-    'blur':function (){
-        KanbanAPI.updateItem($(this).parent().attr('data-id'), {
-            content: $(this).text()
-        });
-    }
-})
-
-$('.kanban__item').on({
-    'dragstart':function (e){
-
-        e.originalEvent.dataTransfer.setData('select_item_id',$(this).attr('data-id'));
-        console.log('data-id: '+$(this).attr('data-id'))
-    }
-
-});
-
-$('.kanban__dropzone').on({
-    'dragover': function (e){
-        e.preventDefault();
-        $(this).addClass("kanban__dropzone--active");
-
+            makeItem($(this).parent().attr('data-id'), newItem.id, '');
+        }
     },
-    'dragleave': function (e){
-        $(this).removeClass("kanban__dropzone--active");
+    'dragstart':{
+        selector: '.kanban__item',
+        handler:function (e){
+            e.originalEvent.dataTransfer.setData('select_item_id',$(this).attr('data-id'));
+            console.log('data-id: '+$(this).attr('data-id'))
+        }
     },
-    'drop': function(e){
-        e.preventDefault();
-        $(this).removeClass("kanban__dropzone--active");
-        // console.log($(this));
+    'blur':{
+        selector:'.kanban__item-input',
+        handler:function (){
+            KanbanAPI.updateItem($(this).parent().attr('data-id'), {
+                content: $(this).text()
+            });
+        }
+    },
+    'dragover':{
+        selector:'.kanban__dropzone',
+        handler:function (e){
+            e.preventDefault();
+            $(this).addClass("kanban__dropzone--active");
+        }
+    },
+    'dragleave':{
+        selector:'.kanban__dropzone',
+        handler:function (e){
+            $(this).removeClass("kanban__dropzone--active");
+        }
+    },
+    'drop':{
+        selector:'.kanban__dropzone',
+        handler:function (e){
+            e.preventDefault();
+            $(this).removeClass("kanban__dropzone--active");
+            // console.log($(this));
 
-        // 기존꺼 삭제하고 드랍존 아래에 넣는다
-        // 1. 만약 처음에 추가됐을 경우 => 부모가 kanban__column-items일 때
-        // 2. 부모가 kanban__item일 때
-        // console.log($(this).parent().attr('class'));
+            // 기존꺼 삭제하고 드랍존 아래에 넣는다
+            // 1. 만약 처음에 추가됐을 경우 => 부모가 kanban__column-items일 때
+            // 2. 부모가 kanban__item일 때
+            // console.log($(this).parent().attr('class'));
 
-        let select_item_id = e.originalEvent.dataTransfer.getData('select_item_id');
-        let select_item = $('[data-id="'+select_item_id+'"');
-        console.log('select_item_id: '+select_item_id);
+            let select_item_id = e.originalEvent.dataTransfer.getData('select_item_id');
+            let select_item = $('[data-id="'+select_item_id+'"');
+            console.log('select_item_id: '+select_item_id);
 
-        let new_column_id;
-        let new_dropped_index;
+            let new_column_id;
+            let new_dropped_index;
 
 
-        if($(this).parent().attr('class') == 'kanban__column-items'){
-            // 드랍존 후에 추가
+            if($(this).parent().attr('class') == 'kanban__column-items'){
+                // 드랍존 후에 추가
 
-            $(this).after(select_item);
-            new_column_id = $(this).parent().parent().attr('data-id');
+                $(this).after(select_item);
+                new_column_id = $(this).parent().parent().attr('data-id');
+
+
+            }
+            else if($(this).parent().attr('class') == 'kanban__item'){
+                // 드랍존의 부모에 추가
+
+
+                $(this).parent().after(select_item);
+                new_column_id = $(this).parent().parent().parent().attr('data-id');
+
+            }
+
+
+            let dropped_index = $('[data-id="'+new_column_id+'"').find('.kanban__dropzone').index(this);
+
+            KanbanAPI.updateItem(select_item_id, {
+                columnId: new_column_id,
+                position: dropped_index
+            });
 
 
         }
-        else if($(this).parent().attr('class') == 'kanban__item'){
-            // 드랍존의 부모에 추가
-
-
-            $(this).parent().after(select_item);
-            new_column_id = $(this).parent().parent().parent().attr('data-id');
-
-        }
-
-
-        let dropped_index = $('[data-id="'+new_column_id+'"').find('.kanban__dropzone').index(this);
-
-        KanbanAPI.updateItem(select_item_id, {
-            columnId: new_column_id,
-            position: dropped_index
-        });
-
     }
-
 });
-
 
 
 // 수정한 사항을 저장한다
