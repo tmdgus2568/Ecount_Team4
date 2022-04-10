@@ -60,9 +60,16 @@ $(document).on({
             console.log('data-id: '+$(this).attr('data-id'))
         }
     },
+    'hover':{
+        selector: '.kanban__item',
+        handler:function (e){
+
+        }
+    },
     'blur':{
         selector:'.kanban__item-input',
         handler:function (){
+            console.log($(this));
             KanbanAPI.updateItem($(this).parent().attr('data-id'), {
                 content: $(this).text()
             });
@@ -81,7 +88,8 @@ $(document).on({
             $(this).removeClass("kanban__dropzone--active");
         }
     },
-    'drop':{
+
+    'drop': {
         selector:'.kanban__dropzone',
         handler:function (e){
             e.preventDefault();
@@ -92,14 +100,24 @@ $(document).on({
             // 1. 만약 처음에 추가됐을 경우 => 부모가 kanban__column-items일 때
             // 2. 부모가 kanban__item일 때
             // console.log($(this).parent().attr('class'));
-
             let select_item_id = e.originalEvent.dataTransfer.getData('select_item_id');
             let select_item = $('[data-id="'+select_item_id+'"');
-            console.log('select_item_id: '+select_item_id);
+
 
             let new_column_id;
             let new_dropped_index;
 
+            // 만약 id가 휴지통이면
+            // delete 수행할거임
+            if($(this).attr('id') == 'trash'){
+                console.log('hi');
+                $('[data-id="'+select_item_id+'"').find('.kanban__item-input').off('blur');
+                KanbanAPI.deleteItem(select_item_id);
+
+                select_item.remove();
+
+                return;
+            }
 
             if($(this).parent().attr('class') == 'kanban__column-items'){
                 // 드랍존 후에 추가
@@ -127,18 +145,12 @@ $(document).on({
             });
 
 
-        }
-    }
+        },
+
+    },
+
+
 });
-
-
-// 수정한 사항을 저장한다
-const updateItem= (itemId, newColumnId, droppedIndex)=>{
-    KanbanAPI.updateItem(itemId, {
-        newColumnId,
-        position: droppedIndex
-    });
-}
 
 
 
