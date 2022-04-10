@@ -94,7 +94,6 @@ $(document).on({
         handler:function (e){
             e.preventDefault();
             $(this).removeClass("kanban__dropzone--active");
-            // console.log($(this));
 
             // 기존꺼 삭제하고 드랍존 아래에 넣는다
             // 1. 만약 처음에 추가됐을 경우 => 부모가 kanban__column-items일 때
@@ -105,12 +104,11 @@ $(document).on({
 
 
             let new_column_id;
-            let new_dropped_index;
 
             // 만약 id가 휴지통이면
             // delete 수행할거임
             if($(this).attr('id') == 'trash'){
-                console.log('hi');
+
                 $('[data-id="'+select_item_id+'"').find('.kanban__item-input').off('blur');
                 KanbanAPI.deleteItem(select_item_id);
 
